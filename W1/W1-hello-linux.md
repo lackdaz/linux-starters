@@ -80,8 +80,7 @@ Many, many thanks to:
     - ~~Install learning slides~~
     - Watch full video link (53 mins)
 
-- [W1 slides](https://github.com/lackdaz/linux-starters/blob/3d5e8b7ae574e17b7e9c18e8312d9a7732498752/W1/W1-HELL0-LINUX.pdf)
-TODO: update
+- [W1 slides](https://github.com/lackdaz/linux-starters/blob/main/W1/Linux-S01.pptx)
 
 ---
 
@@ -145,7 +144,6 @@ Usage:
 ```espeak -v cy 'Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch'```
 
 ---
-
 
 ---
 
