@@ -1,0 +1,2 @@
+#!/bin/bash
+toilet --font smblock -t --gay | sed 's/^/    /'
