@@ -76,7 +76,7 @@ Many, many thanks to:
     - Trivia/Discussion
         - What other reasons to change to Linux
     - How to install software - e.g. browser
-    - ~~Install learning slides~~
+    - Install learning slides
     - Watch full video link (53 mins)
 
 - [W1 slides](https://github.com/lackdaz/linux-starters/blob/main/W1/Linux-S01.pptx)
@@ -104,9 +104,11 @@ fortune | lolcat
 Run continuously:  
 
 ```
-watch -n 5 | fortune | lolca
+watch -n 5 | fortune | lolcat
 ```
-  
+
+---
+
 ### `asciiquarium`
 
 An ASCII fish aquarium(?) wallpaper
@@ -137,10 +139,15 @@ sudo apt install cmatrix
 
 Usage:  
 
-```cmatrix```
-A text-to-speech reader
+```
+cmatrix
+```
+
+---
 
 ### `espeak`
+
+A text-to-speech reader
 
 Install:  
 
@@ -151,8 +158,6 @@ Usage:
 ```
 espeak -v cy 'Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch'
 ```
-
----
 
 ---
 
