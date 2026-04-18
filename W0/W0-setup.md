@@ -130,11 +130,13 @@ And now we are ready for the class!
 
 Vivita laptops (3 laptops)
 
+1. vivita-linux001
 1. vivita-linux004
 1. vivita-linux005
-1. vivita-linux008
-1. vivita-linux014
-1. vivita-linux011
-1. vivita-linux001
 1. vivita-linux007
+1. vivita-linux008
+1. vivita-linux011
+1. vivita-linux014
+1. vivita-linux016
+1. vivita-linux020
 1. vivita-linux101 (sad)

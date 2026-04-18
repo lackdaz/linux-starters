@@ -5,7 +5,6 @@ paging: Slide %d / %d
 theme: ../theme/theme.json
 ---
 
-
 ```
 ~~~toilet --font mono12 -t
 LINUX
@@ -92,15 +91,21 @@ Many, many thanks to:
 
 Install:  
 
-```sudo apt install lolcat fortune-mod```
+```
+sudo apt install lolcat fortune-mod
+```
 
 Usage:  
 
-```fortune | lolcat```
+```
+fortune | lolcat
+```
 
 Run continuously:  
 
-```watch -n 5 | fortune | lolcat```
+```
+watch -n 5 | fortune | lolca
+```
   
 ### `asciiquarium`
 
@@ -126,7 +131,9 @@ Run matrix-y wallpaper
 
 Install:  
 
-```sudo apt install cmatrix```
+```
+sudo apt install cmatrix
+```
 
 Usage:  
 
@@ -141,7 +148,9 @@ Install:
 
 Usage:  
 
-```espeak -v cy 'Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch'```
+```
+espeak -v cy 'Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch'
+```
 
 ---
 
@@ -153,7 +162,7 @@ Usage:
 
 ---
 
-> What do you understand about open source?
+> What do you understand about open-source?
 
 ---
 
