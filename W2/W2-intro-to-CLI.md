@@ -108,26 +108,28 @@ paging: Slide %d / %d
 <!-- ~~~graph-easy --as=boxart
 [ A ] - to -> [ B ]
 ~~~ -->
-
-~~~./ge
+```
+~~~graph-easy --as=boxart
 [ A ] - to -> [ B ]
 ~~~
+```
 
+<<<<<<< Updated upstream
+=======
+```
+>>>>>>> Stashed changes
 ~~~plantuml -utxt -pipe
 @startuml
 A --> B: to
 @enduml
 ~~~
+```
 
 ---
 
 ```bash
 echo "hello world"
 ```
-
-hello hidayah
-
-hello hasa
 
 ---
 
