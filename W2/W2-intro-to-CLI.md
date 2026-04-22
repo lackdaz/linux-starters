@@ -4,6 +4,20 @@ date: MMM dd, YYYY - NLB
 paging: Slide %d / %d
 ---
 
+```
+~~~toilet --font mono12 -t
+INTRO
+~~~
+```
+
+```
+~~~toilet --font mono12 -t
+TO CLI
+~~~
+```
+
+---
+
 # Intro to Command Line (CLI)
 
 ## Outline
@@ -46,7 +60,34 @@ paging: Slide %d / %d
 - [ ] Super commands
 - [ ] File Editor(s)
 
+---
+
+## What is the CLI
+
+### GUI vs CLI
+
+<https://www.youtube.com/watch?v=w9u0d4C95Zs>
+
+### Why CLI?
+
+<https://www.youtube.com/watch?v=Q1dwzi5DKio&t=82s>
+
+---
+
+- [x] What is the CLI?
+- [ ] Terminal - First Look
+- [ ] Basic Commands
+- [ ] How to install packages
+- [ ] Super commands
+- [ ] File Editor(s)
+
+---
+
+## Terminal - First Look
+
 ## Activity
+
+---
 
 1. SSH
 1. Scavenger game!
@@ -74,7 +115,7 @@ paging: Slide %d / %d
         - `sudo apt install htop`
         - how to check system/disk usage - `df -h`
         - how to check directory/file size - `du -sh *`
-
+ 
     1. Super-commands
         - Pipe - `|`
         - Search for matching text - `grep`
@@ -85,6 +126,8 @@ paging: Slide %d / %d
         - GUI-based text editors: `xed`
         - How to copy and paste
         - Change your hostname - `sudo xed /etc/hostname`
+
+---
 
 ---
 
@@ -114,10 +157,7 @@ paging: Slide %d / %d
 ~~~
 ```
 
-<<<<<<< Updated upstream
-=======
 ```
->>>>>>> Stashed changes
 ~~~plantuml -utxt -pipe
 @startuml
 A --> B: to
