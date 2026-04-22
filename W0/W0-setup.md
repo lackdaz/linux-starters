@@ -102,7 +102,7 @@ First steps in the CLI:
 
 1. Download the slides repository.  
 
-```git clone https://github.com/```
+```git clone https://github.com/maaslalani/slides```
 
 1. Access the code repository, make from source and compile the binary  
 
@@ -119,7 +119,7 @@ press `q` to exit
 
 ```git clone https://github.com/lackdaz/linux-starters```
 
-1. Go into the directory for the week (in this case, W1 for week 1).  
+1. Go into the directory for the week (for example, W1 for week 1).  
 ```cd linux-starters```
 
 ```cd W1```

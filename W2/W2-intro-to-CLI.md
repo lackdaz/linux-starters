@@ -72,18 +72,183 @@ TO CLI
 
 <https://www.youtube.com/watch?v=Q1dwzi5DKio&t=82s>
 
----
-
-- [x] What is the CLI?
-- [ ] Terminal - First Look
-- [ ] Basic Commands
-- [ ] How to install packages
-- [ ] Super commands
-- [ ] File Editor(s)
 
 ---
 
 ## Terminal - First Look
+
+### Other shells
+- `bash` (`B`ourn `A`gain `Sh`ell). 
+
+maker@linux101:~$ 
+
+- `fish`  (`F`riendly `I`nteractive `Sh`ell). 
+
+maker@linux101 ~>
+
+Q: Can you see the difference?
+
+### Godmode
+
+`sudo su`
+
+root@linux101:/home/maker#
+
+---
+
+## Basic commands
+### `ls` - list
+
+Download this massive sneaky file (134MB) - Press `ctr-e` if in `slides`
+```bash
+wget https://bioacousticlib.sgp1.digitaloceanspaces.com/linux/rockyou.txt
+```
+
+---
+
+```bash
+ls .
+```
+---
+
+#### hidden files
+
+```bash
+ls -la .
+```
+
+```bash
+ls -lah .
+```
+
+---
+
+#### sort by time 
+
+```bash
+ls -lt .
+```
+
+```bash
+ls -lrt .
+```
+
+---
+
+### `cd` - change directory
+
+#### `There and back again`
+
+1. ```cd shire```. 
+
+maker@linux101:~/code/linux-starters/W2/shire$
+
+1. ```cd mordor```. 
+
+maker@linux101:~/code/linux-starters/W2/shire/mordor$
+
+1. ```cd -```. 
+
+maker@linux101:~/code/linux-starters/W2/shire$
+
+1. ```cd r<tab>``` `tab tab tab...enter`
+
+Q: Where did you end up?
+
+1. ```cd -```
+
+What happened?
+
+---
+
+### `pwd` - present working directory (where am I?)
+
+```bash
+pwd
+```
+
+### `touch` - make a magic ring (file)
+
+```bash
+touch magic_ring
+```
+
+```bash
+ls
+```
+
+---
+
+### `xed` - inscribe your magic ring (file)
+
+```xed magic_ring```. 
+
+OR
+
+```bash
+echo "one ring to rule them all" > magic_ring
+```
+
+### `cat` - concatenate
+
+```bash
+cat magic_ring
+```
+
+### inscribe the one-ring (file)
+
+```bash
+cat one_ring
+```
+
+---
+
+```bash
+head -n 2 one_ring
+```
+
+```bash
+tail -n 2 one_ring
+```
+
+---
+
+### `grep` - global regular expression print (sigh) -> let's call it line filter
+
+```bash
+grep ring one_ring
+```
+
+---
+
+### `less` 
+
+`less rockyou.txt`. 
+
+`pgdown` - to go to next page. 
+
+`pgup` - to go to previous page.  
+
+`arrowdown` - to go one line down.  
+
+`arrowup` - to go one line down.  
+
+`q` - to exit.  
+
+#### Has your password been hacked?
+
+`grep <your-password> rockyou.txt`
+
+---
+
+## How to find help?
+
+1. `-h` or `--help`
+1. `man`
+1. `info`
+
+---
+
 
 ## Activity
 
