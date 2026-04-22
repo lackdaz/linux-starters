@@ -123,7 +123,6 @@ press `q` to exit
 ```git clone https://github.com/lackdaz/linux-starters```
 
 1. Go into the directory for the week (for example, W1 for week 1).  
-
 ```cd linux-starters```
 
 ```cd W1```
