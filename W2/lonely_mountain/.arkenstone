@@ -4,3 +4,5 @@
 	like snow under the stars, 
 	like rain upon the Moon!"
 —Thorin II in The Hobbit, JRR Tolkien
+
+pssst! try base64 -d .secret | lolcat
