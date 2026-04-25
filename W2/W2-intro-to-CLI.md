@@ -51,6 +51,11 @@ TO CLI
 
 ## Agenda
 
+## Install slides
+
+- [ ] Installing `slides`
+- [ ] Cloning the linux-starters repository
+
 ## Learning objectives
 
 - [ ] What is the CLI?
@@ -59,6 +64,88 @@ TO CLI
 - [ ] How to install packages
 - [ ] Super commands
 - [ ] File Editor(s)
+
+## Stretch goals
+
+- [ ] Shortcuts - symlinks, aliases, bash scripts
+- [ ] Code/decode stuff
+- [ ] Play a terminal game
+
+---
+
+## Let's install the slides
+
+**GO TO THIS URL**: 
+
+https://tinyurl.com/linux-starters
+
+First steps in the CLI:
+
+1. Update the APT repositories:  
+
+```
+sudo apt update
+```
+
+1. Install git and other dependencies.  
+
+```
+sudo apt install git toilet golang-go libgraph-easy-perl plantuml
+``` 
+and press `y`
+
+`libgraph-easy-perl` is for `graph-easy`.
+`graphviz` is `plantuml`.
+
+1. Add GO to path and source it!
+
+```
+echo 'export PATH="$PATH:$(go env GOPATH)/bin"' >> ~/.bashrc && source ~/.bashrc
+```
+
+1. Download the slides repository.  
+
+```
+git clone https://github.com/maaslalani/slides
+```
+---
+
+
+1. Access the code repository, make from source and compile the binary  
+
+```
+cd slides
+```  
+
+```
+go install
+```
+
+1. Check if slides work:  
+
+```
+slides
+```
+
+press `q` to exit
+
+1. Download the code repository  
+
+```
+git clone https://github.com/lackdaz/linux-starters
+```
+
+1. Go into the directory for the week (for example, W1 for week 1).  
+
+```
+cd linux-starters
+```
+
+```
+cd W1
+```
+
+And now we are ready for the class!
 
 ---
 
@@ -77,22 +164,32 @@ TO CLI
 
 ## Terminal - First Look
 
+### The "OG" Shell `sh`
+- `sh`  
+
+>$ 
+
+### Bash (`B`ourn `A`gain `Sh`ell). 
+
+- `bash`
+
+>maker@linux101:~$ 
+
 ### Other shells
-- `bash` (`B`ourn `A`gain `Sh`ell). 
-
-maker@linux101:~$ 
-
 - `fish`  (`F`riendly `I`nteractive `Sh`ell). 
 
-maker@linux101 ~>
+>maker@linux101 ~>
 
-Q: Can you see the difference?
 
 ### Godmode
 
-`sudo su`
+`sudo su` # drops into superuser mode
 
-root@linux101:/home/maker#
+>root@linux101:/home/maker#
+
+
+### Question!
+>Q: Can you see the difference?
 
 ---
 
@@ -101,13 +198,13 @@ root@linux101:/home/maker#
 
 Download this massive sneaky file (134MB) - Press `ctr-e` if in `slides`
 ```bash
-wget https://bioacousticlib.sgp1.digitaloceanspaces.com/linux/rockyou.txt
+wget https://bioacousticlib.sgp1.digitaloceanspaces.com/linux/rockyou.txt # this downloads the rock.txt from a place on the internet 
 ```
 
 ---
 
 ```bash
-ls .
+ls . # lists files in the current directory
 ```
 ---
 
@@ -201,15 +298,15 @@ cat magic_ring
 ### read the one-ring (file)
 
 ```bash
-cat one_ring
+cat one_ring # read the one-ring
 ```
 
 ---
 
 
 ```bash
-cat one_ring
-echo ""
+cat one_ring # reads the one-ring
+echo "" # creates space between output
 ```
 <!-- spacer -->
 

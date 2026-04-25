@@ -106,8 +106,11 @@ First steps in the CLI:
 
 1. Access the code repository, make from source and compile the binary  
 
-```cd slides```
+```cd slides```  
+
 ```go install```
+
+---
 
 1. Check if slides work:  
 
@@ -115,11 +118,12 @@ First steps in the CLI:
 
 press `q` to exit
 
-1. Download the code repository.  
+1. Download the code repository  
 
 ```git clone https://github.com/lackdaz/linux-starters```
 
 1. Go into the directory for the week (for example, W1 for week 1).  
+
 ```cd linux-starters```
 
 ```cd W1```
@@ -127,16 +131,3 @@ press `q` to exit
 And now we are ready for the class!
 
 ---
-
-Vivita laptops (3 laptops)
-
-1. vivita-linux001
-1. vivita-linux004
-1. vivita-linux005
-1. vivita-linux007
-1. vivita-linux008
-1. vivita-linux011
-1. vivita-linux014
-1. vivita-linux016
-1. vivita-linux020
-1. vivita-linux101 (sad)

@@ -1,2 +1,0 @@
-#!/bin/bash
-graph-easy --as=boxart | sed 's/^/    /'
