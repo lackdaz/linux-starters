@@ -1,7 +1,8 @@
 ---
 author: Seth
-date: MMM dd, YYYY - NLB
+date: MMM dd, YYYY - VIVITA
 paging: Slide %d / %d
+theme: ../theme/theme.json
 ---
 
 ```
@@ -25,6 +26,7 @@ TO CLI
 1. What is the CLI (video)?
     - What is the CLI (Our version)? - cue Harry Potter
     - Axiom - Grazing
+
 
 1. Terminal - first look
 1. Basic commands
@@ -73,7 +75,7 @@ TO CLI
 
 ---
 
-## Let's install the slides
+## Dependencies for installation
 
 **GO TO THIS URL**: 
 
@@ -97,18 +99,20 @@ and press `y`
 `libgraph-easy-perl` is for `graph-easy`.
 `graphviz` is `plantuml`.
 
-1. Add GO to path and source it!
+1. Add GO to path and source it
 
 ```
 echo 'export PATH="$PATH:$(go env GOPATH)/bin"' >> ~/.bashrc && source ~/.bashrc
 ```
+---
+
+## Installing `slides`
 
 1. Download the slides repository.  
 
 ```
 git clone https://github.com/maaslalani/slides
 ```
----
 
 
 1. Access the code repository, make from source and compile the binary  
@@ -129,6 +133,10 @@ slides
 
 press `q` to exit
 
+---
+
+## Cloning linux-starters
+
 1. Download the code repository  
 
 ```
@@ -145,7 +153,9 @@ cd linux-starters
 cd W1
 ```
 
-And now we are ready for the class!
+And now we are ready for the class! 
+
+And you just used `git` for the first-time!
 
 ---
 
@@ -169,14 +179,14 @@ And now we are ready for the class!
 
 >$ 
 
-### Bash (`B`ourn `A`gain `Sh`ell). 
+### Bash (`B`ourn `A`gain `Sh`ell)
 
 - `bash`
 
 >maker@linux101:~$ 
 
 ### Other shells
-- `fish`  (`F`riendly `I`nteractive `Sh`ell). 
+- `fish`  (`F`riendly `I`nteractive `Sh`ell)  
 
 >maker@linux101 ~>
 
@@ -197,14 +207,15 @@ And now we are ready for the class!
 ### `ls` - list
 
 Download this massive sneaky file (134MB) - Press `ctr-e` if in `slides`
-```bash
-wget https://bioacousticlib.sgp1.digitaloceanspaces.com/linux/rockyou.txt # this downloads the rock.txt from a place on the internet 
+```
+wget https://bioacousticlib.sgp1.digitaloceanspaces.com/linux/rockyou.txt 
+# this downloads the rock.txt from a place on the internet 
 ```
 
----
+#### List current directory
 
 ```bash
-ls . # lists files in the current directory
+ls . 
 ```
 ---
 
@@ -212,10 +223,12 @@ ls . # lists files in the current directory
 
 ```bash
 ls -la .
+# list all (hidden) files
 ```
 
 ```bash
 ls -lah .
+# list hidden files with human-readable size format
 ```
 
 ---
@@ -224,10 +237,12 @@ ls -lah .
 
 ```bash
 ls -lt .
+# list file details sorted by time (descending)
 ```
 
 ```bash
 ls -lrt .
+# list file details sorted by time (ascending)
 ```
 
 ---
@@ -236,49 +251,96 @@ ls -lrt .
 
 #### `There and back again`
 
-1. ```cd shire```. 
+1. ```cd shire```
 
-maker@linux101:~/code/linux-starters/W2/shire$
+> maker@linux101:~/linux-starters/W2/shire$
 
-1. ```cd mordor```. 
+1. ```cd mordor```
 
-maker@linux101:~/code/linux-starters/W2/shire/mordor$
+> maker@linux101:~/linux-starters/W2/shire/mordor$
 
-1. ```cd -```. 
+Oops this looks dangerous, let's go back quickly!
 
-maker@linux101:~/code/linux-starters/W2/shire$
+1. ```cd -``` 
 
-1. ```cd r<tab>``` `tab tab tab...enter`
-
-Q: Where did you end up?
-
-1. ```cd -```
-
-What happened?
+> Q: What did that do?
+> Q: Where are we now?
 
 ---
+
+1. ```ls```
+
+you should see... `mordor` and `rivendell`  
+
+let's go to `rivendell`! But let's auto-complete ... the rest of the unexpected journey
+> maker@linux101:~/linux-starters/W2/shire$
+
+1. ```cd r```, then press `tab` like ```cd r<tab>```  
+
+>Q: Wow! how did that work?
+
+1. Now press `enter` and `ls`
+
+>Q: Where did you end up?
+
+1. Let's follow our heroes to the end! (self-learning)
+
+>Q: Where is the final destination?
+
+---
+
+Okay phew! What a long journey, now where am I?
 
 ### `pwd` - present working directory (where am I?)
 
 ```bash
 pwd
 ```
+> /home/maker/linux-starters/W2/shire/rivendell/misty_mountains/mirkwood/laketown/lonely_mountain
 
-### `touch` - make a magic ring (file)
+> Q: How do I go back to the Shire?
+
+### `cd ..` - let's go up
+
+```
+cd ../../.. and so and and so forth
+```
+
+This looks confusing so let's try something else
+
+---
+
+### Going back to a shortcut to $HOME
+
+```
+cd
+```
+
+OR
+
+```
+cd ~
+```
+
+> Q: How do we get back to `W2`?
+
+---
+## Create (empty) files
+
+### `touch` - How to forge an empty magic ring
 
 ```bash
 touch magic_ring
-```
-
-```bash
-ls
+# note: its empty
 ```
 
 ---
 
-### `xed` - inscribe your magic ring (file)
+## Edit files
 
-```xed magic_ring```. 
+### `xed` - inscribe your file (I mean, magic ring)
+
+```xed magic_ring```
 
 OR
 
@@ -287,11 +349,15 @@ echo "one ring to rule them all" > magic_ring
 ```
 
 ```bash
-cat magic_ring
+cat magic_ring # we'll get to this in the next slide
 ```
+
+Other types: `nano`, `vim`, `xedit`
 
 
 ---
+
+## Read file contents
 
 ### `cat` - concatenate
 
@@ -321,15 +387,17 @@ tail -n 2 one_ring
 ```
 
 ---
-
-### `grep` - global regular expression print (sigh) -> let's call it line filter
+## Read file contents
+### `grep` - global regular expression print (sigh) -> let's call it a line filter
 
 ```bash
 grep ring one_ring
 ```
 
----
+note: `grep` is very powerful - as powerful as gandalf. Tell us next time what you've done with `grep`
 
+---
+## Read file contents
 ### `less` 
 
 `less rockyou.txt`. 
@@ -363,8 +431,7 @@ grep ring one_ring
 
 ---
 
-1. SSH
-1. Scavenger game!
+1. SSH 
 
 ---
 

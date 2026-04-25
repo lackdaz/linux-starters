@@ -33,7 +33,7 @@
     "color": "#29c"
   },
   "h4": {
-    "color": "#559",
+    "color": "#DA99F2",
     "prefix": "░░░░░ "
   },
   "h5": {},
@@ -49,7 +49,7 @@
     "bold": true
   },
   "hr": {
-    "color": "240",
+    "color": "#559",
     "format": "\n--------\n"
   },
   "item": {
