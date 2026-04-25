@@ -45,9 +45,9 @@ TO CLI
 
 ## Dependencies for installation
 
-**GO TO THIS URL**: 
+**GO TO THIS URL**:
 
-https://tinyurl.com/linux-starters
+<https://tinyurl.com/linux-starters>
 
 First steps in the CLI:
 
@@ -61,7 +61,8 @@ sudo apt update
 
 ```
 sudo apt install git toilet golang-go libgraph-easy-perl plantuml
-``` 
+```
+
 and press `y`
 
 `libgraph-easy-perl` is for `graph-easy`.
@@ -72,6 +73,7 @@ and press `y`
 ```
 echo 'export PATH="$PATH:$(go env GOPATH)/bin"' >> ~/.bashrc && source ~/.bashrc
 ```
+
 ---
 
 ## Installing `slides`
@@ -81,7 +83,6 @@ echo 'export PATH="$PATH:$(go env GOPATH)/bin"' >> ~/.bashrc && source ~/.bashrc
 ```
 git clone https://github.com/maaslalani/slides
 ```
-
 
 1. Access the code repository, make from source and compile the binary  
 
@@ -121,7 +122,7 @@ cd linux-starters
 cd W1
 ```
 
-And now we are ready for the class! 
+And now we are ready for the class!
 
 And you just used `git` for the first-time!
 
@@ -137,27 +138,27 @@ And you just used `git` for the first-time!
 
 <https://www.youtube.com/watch?v=Q1dwzi5DKio&t=82s>
 
-
 ---
 
 ## Terminal - First Look
 
 ### The "OG" Shell `sh`
+
 - `sh`  
 
->$ 
+>$
 
 ### Bash (`B`ourn `A`gain `Sh`ell)
 
 - `bash`
 
->maker@linux101:~$ 
+>maker@linux101:~$
 
 ### Other shells
+
 - `fish`  (`F`riendly `I`nteractive `Sh`ell)  
 
 >maker@linux101 ~>
-
 
 ### Godmode
 
@@ -165,19 +166,21 @@ And you just used `git` for the first-time!
 
 >root@linux101:/home/maker#
 
-
-### Question!
+### Question
+>
 >Q: Can you see the difference?
 
 ---
 
 ## Basic commands
+
 ### `ls` - list
 
-Download this massive sneaky file (134MB) - Press `ctr-e` if in `slides`
-```
+Download this massive sneaky file (134MB) - Press `ctr-e` if in `slides` and wait...
+
+```bash
 wget https://bioacousticlib.sgp1.digitaloceanspaces.com/linux/rockyou.txt 
-# this downloads the rock.txt from a place on the internet 
+# this downloads the rock.txt from a totally safe place on the internet 
 ```
 
 #### List current directory
@@ -185,6 +188,7 @@ wget https://bioacousticlib.sgp1.digitaloceanspaces.com/linux/rockyou.txt
 ```bash
 ls . 
 ```
+
 ---
 
 #### hidden files
@@ -201,7 +205,7 @@ ls -lah .
 
 ---
 
-#### sort by time 
+#### sort by time
 
 ```bash
 ls -lt .
@@ -229,7 +233,7 @@ ls -lrt .
 
 Oops this looks dangerous, let's go back quickly!
 
-1. ```cd -``` 
+1. ```cd -```
 
 > Q: What did that do?
 > Q: Where are we now?
@@ -264,6 +268,7 @@ Okay phew! What a long journey, now where am I?
 ```bash
 pwd
 ```
+
 > /home/maker/linux-starters/W2/shire/rivendell/misty_mountains/mirkwood/laketown/lonely_mountain
 
 > Q: How do I go back to the Shire?
@@ -293,6 +298,7 @@ cd ~
 > Q: How do we get back to `W2`?
 
 ---
+
 ## Create (empty) files
 
 ### `touch` - How to forge an empty magic ring
@@ -322,7 +328,6 @@ cat magic_ring # we'll get to this in the next slide
 
 Other types: `nano`, `vim`, `xedit`
 
-
 ---
 
 ## Read file contents
@@ -337,7 +342,6 @@ cat one_ring # read the one-ring
 
 ---
 
-
 ```bash
 cat one_ring # reads the one-ring
 echo "" # creates space between output
@@ -345,17 +349,21 @@ echo "" # creates space between output
 <!-- spacer -->
 
 show first n lines
+
 ```bash
 head -n 2 one_ring
 ```
 
 show last n lintes
+
 ```bash
 tail -n 2 one_ring
 ```
 
 ---
+
 ## Read file contents
+
 ### `grep` - global regular expression print (sigh) -> let's call it a line filter
 
 ```bash
@@ -365,20 +373,22 @@ grep ring one_ring
 note: `grep` is very powerful - as powerful as gandalf. Tell us next time what you've done with `grep`
 
 ---
+
 ## Read file contents
-### `less` 
 
-`less rockyou.txt`. 
+### `less`
 
-`pgdown` - to go to next page. 
+`less rockyou.txt`
 
-`pgup` - to go to previous page.  
+`pgdown` - to go to next page
 
-`arrowdown` - to go one line down.  
+`pgup` - to go to previous page
 
-`arrowup` - to go one line down.  
+`arrowdown` - to go one line down
 
-`q` - to exit.  
+`arrowup` - to go one line down
+
+`q` - to exit  
 
 #### Has your password been hacked?
 
@@ -394,10 +404,11 @@ note: `grep` is very powerful - as powerful as gandalf. Tell us next time what y
 
 ---
 
-
 ## Activity
 
 1. Go to the shire directory and look for all the hidden treasures!
+
+Refer to the cheatsheet in the next slide if get stuck!
 
 ---
 
@@ -407,21 +418,47 @@ note: `grep` is very powerful - as powerful as gandalf. Tell us next time what y
     1. `ls`
         - modes: -a, `-la`, `-lh`, `-lrt`
     1. `cd`
-        - `cd -`
-        - `pwd`
+        - `cd -`    # go back
+        - `pwd`     # current working directory
     1. Read files
-        - `touch`
-        - `xed`
-        - `cat`
-        - `head`
-        - `tail`
-        - `grep`
-        - `less`
+        - `touch`   # create files
+        - `xed`     # edit file with GUI
+        - `cat`     # read contents of file
+        - `head`    # read first n lines of file
+        - `tail`    # read last n lines of file
+        - `grep`    # filter
+        - `less`    # read a portion of (a very big) file
     1. How to find help?
         - `-h` or `--help`
         - `man`
         - `info`
 
+---
+
+What we missed this week:
+
+1. `rm`     # remove
+1. `mkdir`  # make directory, or folder
+1. `mv`     # moves and renames files
+
+---
+
+## Encoding/decoding of hidden files
+
+to encode:  
+
+```
+base64 -i birthday_cake.txt > .secret.b64
+# Explanation: `>` replaces contents of (and creates) `.secret.b64`
+```
+
+to decode:  
+
+```
+base64 -d  .secret.b64 | cat
+```
+
+---
 
 ## SSH
 
@@ -430,5 +467,5 @@ note: `grep` is very powerful - as powerful as gandalf. Tell us next time what y
 ```
 ssh snakes.run
 ```
----
 
+---
