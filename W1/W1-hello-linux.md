@@ -21,23 +21,11 @@ STARTERS
 
 # hello-linux
 
-Run 1:
+Welcome to BLUR
 
-Participants:
+Linux Tutorial Season 2
 
-1. Hisham (BYOL)
-1. Francis (BYOL)
-1. Alexander (BYOL)
-1. Evander (BYOL)
-1. Kim (BYOL, setup)
-1. Hasan
-1. Hidayah
-1. Neo
-1. Viya
-1. George
-1. Zephan
-1. Trevis
-
+Episode 1
 ---
 
 ## Foreword
