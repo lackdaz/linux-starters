@@ -28,17 +28,6 @@ Linux Tutorial Season 2
 Episode 1
 ---
 
-## Foreword
-
-Many, many thanks to:
-
-1. **VIVITA** for the venue and equipment sponsorship
-1. Johan for the donation of laptops
-1. Cathy for the OG inspiration for the class
-1. Neo for being the installation maestro and helping to get the dual-boot provisioned
-
----
-
 ## Outline (120 mins)
 
 1. Learning Axioms (10 mins)
