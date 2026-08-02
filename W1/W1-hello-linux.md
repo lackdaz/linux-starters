@@ -1,5 +1,5 @@
 ---
-author: Seth
+author: Seth & Cathy
 date: MMM dd, YYYY - VIVITA
 paging: Slide %d / %d
 theme: ../theme/theme.json
@@ -13,7 +13,7 @@ LINUX
 
 ```
 ~~~toilet --font mono12 -t
-STARTERS
+INTRO
 ~~~
 ```
 
@@ -39,12 +39,7 @@ Episode 1
 
 1. What is Linux? - slides (30 mins)
 
-1. Stretch goals (40 mins)
-    - Trivia/Discussion
-        - What other reasons to change to Linux
-    - How to install software - e.g. browser
-    - Install learning slides
-    - Watch full video link (53 mins)
+1. Stretch goals
 
 - [W1 slides](https://github.com/lackdaz/linux-starters/blob/main/W1/Linux-S01.pptx)
 
@@ -227,5 +222,13 @@ This contains the slides and hands-on for all 4 sessions.
 ---
 
 > Why are we using Linux Mint?
+
+---
+## Discussion
+    - What other reasons to change to Linux
+    - How to install software - e.g. browser
+    - Install learning slides
+    - Watch full video link (53 mins)
+
 
 ---
