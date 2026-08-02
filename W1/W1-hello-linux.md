@@ -197,6 +197,23 @@ espeak -v cy 'Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch'
 ---
 ## What is Linux?
 - [W1 slides](https://github.com/lackdaz/linux-starters/blob/main/W1/Linux-S01.pptx)
+---
+## Linux Starter Git resource
+### `git`
+
+Install:  
+```
+sudo apt install git
+```
+Usage:  
+
+```
+cd
+git clone https://github.com/lackdaz/linux-starters.git
+ls linux-starters
+```
+
+This contains the slides and hands-on for all 4 sessions.
 
 ---
 ## Trivia
