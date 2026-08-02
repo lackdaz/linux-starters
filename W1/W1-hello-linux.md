@@ -33,17 +33,6 @@ Episode 1
 1. Learning Philosophy (5 mins)
 1. First boot/login
 1. First look (GUI) (30 mins)
-    - Start button, installed software
-    - Navigation (Software Manager, Preferences, Admin)
-    - MS-equivalents
-        - Writer
-        - Calc
-        - Impress
-        - Draw
-        - Base & Math
-    - Go Online - WiFi, web browser
-    - File Explorer (FS) - show hidden files
-
 1. First look (Terminal)
     - Set your HOSTNAME
     - CLI Jam! (10 mins)
@@ -62,7 +51,7 @@ Episode 1
 ---
 ## Learning Philosophy
 - Slow and steady
--  Peer-to-Peer
+- Peer-to-Peer
 - Passion-led
 ---
 ## Don't Panic
@@ -70,6 +59,7 @@ Episode 1
 - Don't worry if you don't understand every command
 - Repetition helps
 - Remember concept, base command, google the details
+- Ask for help
 ---
 ## We have made the hard decisions for you
 - What Linux to use
@@ -78,20 +68,58 @@ Episode 1
 More of what, why, how later.
 ---
 ## First boot / login
+- On the USB flashdrive, write down:
+  - Your name (e.g. Minty)
+  - Laptop name (e.g. blur001)
 - Plug-in USB flashdrive
 - Power-on
 - Press ESC.
-- - If you missed:
+  - If you missed:
   - Press any key to continue
   - $\color{#AAAA00}{\text{ Shell> }}$ _exit_
+- Select "Boot Menu", press ENTER
+- Select "USB: ... ", press ENTER
+- Wait for a few minutes for Linux Mint to boot up
 - Login: _maker_
 - Password: _123456_
 
 ---
-#
+## First look (GUI)
+- Start button, installed software
+- Navigation (Software Manager, Preferences, Admin)
+- MS-equivalents
+  - Writer
+  - Calc
+  - Impress
+   - Draw
+   - Base & Math
+- Go Online - WiFi, web browser
+- File Explorer (FS) - show hidden files
+---
+## First look (CLI)
+CLI = Command Line Interface
+aka Terminal
+- Open Terminal
+- Set your machine hostname
+  ```
+  sudo hostname blur___
+  hostname
+  ```
+  - e.g. _sudo hostname blur001_
 ---
 ## CLI Jam! Install some fun packages in the CLI
+Let's try out some command lines!
 
+### `ls`
+- ```ls``` list files and directories
+- ```ls -al``` list All hidden files with detaiLs  
+---
+### `cd`
+- ```cd``` change current directory
+- ```cd /``` go to / root directory
+- ```ls -al``` list All with detaiLs
+- ```cd``` go to your home directory
+---
 ### `lolcat`
 
 `cat` but colorful!
@@ -167,7 +195,10 @@ espeak -v cy 'Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch'
 ```
 
 ---
+## What is Linux?
+- [W1 slides](https://github.com/lackdaz/linux-starters/blob/main/W1/Linux-S01.pptx)
 
+---
 ## Trivia
 
 > Where can you find Linux? [3 answers]
