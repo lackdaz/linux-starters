@@ -151,9 +151,9 @@ An ASCII fish aquarium(?) wallpaper
 Install:  
 
 ```
-sudo add-apt-repository ppa:ytvwld/asciiquarium \
-&& sudo apt update \
-&& sudo apt install asciiquarium
+sudo add-apt-repository ppa:ytvwld/asciiquarium
+sudo apt update
+sudo apt install asciiquarium
 ```
 
 Usage:  
