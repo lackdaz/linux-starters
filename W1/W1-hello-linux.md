@@ -90,7 +90,7 @@ More of what, why, how later.
    - Draw
    - Base & Math
 - Go Online - WiFi, web browser
-- File Explorer (FS) - show hidden files
+- File Explorer (Files)
 ---
 ## First look (CLI)
 CLI = Command Line Interface
@@ -116,6 +116,24 @@ Let's try out some command lines!
 - ```ls -al``` list All with detaiLs
 - ```cd``` go to your home directory
 ---
+
+### `fortune`
+
+`fortune` generate words of wisdom
+
+Install:  
+
+```
+sudo apt install fortune-mod
+```
+
+Usage:  
+
+```
+fortune
+```
+
+---
 ### `lolcat`
 
 `cat` but colorful!
@@ -123,7 +141,7 @@ Let's try out some command lines!
 Install:  
 
 ```
-sudo apt install lolcat fortune-mod
+sudo apt install lolcat
 ```
 
 Usage:  
