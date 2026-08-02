@@ -30,8 +30,7 @@ Episode 1
 
 ## Outline (120 mins)
 
-1. Learning Axioms (10 mins)
-1. What is Linux? - slides (30 mins)
+1. Learning Philosophy (5 mins)
 1. First boot/login
 1. First look (GUI) (30 mins)
     - Start button, installed software
@@ -46,8 +45,10 @@ Episode 1
     - File Explorer (FS) - show hidden files
 
 1. First look (Terminal)
-
+    - Set your HOSTNAME
     - CLI Jam! (10 mins)
+
+1. What is Linux? - slides (30 mins)
 
 1. Stretch goals (40 mins)
     - Trivia/Discussion
@@ -59,7 +60,36 @@ Episode 1
 - [W1 slides](https://github.com/lackdaz/linux-starters/blob/main/W1/Linux-S01.pptx)
 
 ---
+## Learning Philosophy
+- Slow and steady
+-  Peer-to-Peer
+- Passion-led
+---
+## Don't Panic
+- Don't worry if you cannot remember every detail
+- Don't worry if you don't understand every command
+- Repetition helps
+- Remember concept, base command, google the details
+---
+## We have made the hard decisions for you
+- What Linux to use
+- How to install
+- Where to install
+More of what, why, how later.
+---
+## First boot / login
+- Plug-in USB flashdrive
+- Power-on
+- Press ESC.
+- - If you missed:
+  - Press any key to continue
+  - $\color{#AAAA00}{\text{ Shell> }}$ _exit_
+- Login: _maker_
+- Password: _123456_
 
+---
+#
+---
 ## CLI Jam! Install some fun packages in the CLI
 
 ### `lolcat`
