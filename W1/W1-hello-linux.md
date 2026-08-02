@@ -71,7 +71,8 @@ More of what, why, how later.
 - Press ESC.
   - If you missed:
   - Press any key to continue
-  - $\color{#AAAA00}{\text{ Shell> }}$ _exit_
+  - $\color{#AAAA00}{\text{Shell> }}$ _exit_
+  - <font color="#AAAA00">Shell> </font> _exit_
 - Select "Boot Menu", press ENTER
 - Select "USB: ... ", press ENTER
 - Wait for a few minutes for Linux Mint to boot up
