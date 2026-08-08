@@ -104,6 +104,13 @@ aka Terminal
   hostname
   ```
   - e.g. _sudo hostname blur001_
+
+---
+```
+~~~toilet --font mono12 -t
+CLI JAM!!!
+~~~
+```
 ---
 ## CLI Jam! Install some fun packages in the CLI
 Let's try out some command lines!
