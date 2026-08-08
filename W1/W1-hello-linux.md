@@ -49,7 +49,7 @@ Episode 1
 - Peer-to-Peer
 - Passion-led
 ---
-## Don't Panic
+## Don't Panic, Just graze
 - Don't worry if you cannot remember every detail
 - Don't worry if you don't understand every command
 - Repetition helps
@@ -67,6 +67,7 @@ More of what, why, how later.
   - Your name (e.g. Minty)
   - Laptop name (e.g. blur001)
 - Plug-in USB flashdrive
+- **Leave the USB flashdrive plugged at all times**
 - Power-on
 - Press ESC.
   - If you missed:
@@ -78,6 +79,7 @@ More of what, why, how later.
 - Wait for a few minutes for Linux Mint to boot up
 - Login: _maker_
 - Password: _123456_
+- DO NOT CHANGE THIS PASSWORD
 
 ---
 ## First look (GUI)
