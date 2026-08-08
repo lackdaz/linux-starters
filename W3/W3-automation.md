@@ -8,7 +8,7 @@ theme: ../theme/theme.json
 
 ```
 ~~~toilet --font mono9 -t
-INTRO
+INTRO TO
 ~~~
 ```
 
@@ -19,7 +19,7 @@ AUTOMATION
 ```
 ---
 
-## Getting repo updates...
+## Housekeeping - Getting repo updates...and learning a little about __git__
 
 If you have made changes to your code:  
 1. go to the project repository root `~/linux-starters`
@@ -30,17 +30,26 @@ git stash
 ```
 1. Get latest code changes:  
 ```
-git pull origin main`
+git pull origin main
 ```
 1. Move your changes back:  
 ```
 git stash pop
 ```
 
+If you are lazy and want to just run all of this in one command, make sure you `chmod +x W3-automation.md` and press ctr+`:  
+
+```bash
+cd ~/linux-starters
+git add .
+git stash
+git pull origin main
+git stash pop
+```
+
 And you're ready for the class!
 
 ---
-
 
 ## Dependencies ...
 
@@ -49,24 +58,30 @@ And you're ready for the class!
 ## Learning objectives
 - [ ] Refresher: `find` Cinderella's shoes
     - Things we missed last week: `rm`, `mkdir`, `mv`, `chmod`
-- [ ] `shell scripting`
-- [ ] `cron`
-- [ ] `FS` - file systems, `systemd`
+- [ ] `shell-scripting` - chain commands together
+- [ ] `cron` - automate your commands
+- [ ] `ssh` - move between computers
 
 ## Stretch goals
-
-- [ ] Play with openclaw
-- [ ] `SSH`
+- [ ] Exercises
 
 ## Discussion
-- Homework / What are we going to do next week
+- Homework / what are we going to do next week
+---
+
+## Install `vim`
+
+A powerful text-edit, arch-nemesis of `nano`
+
+```
+sudo apt install -y vim
+```
 
 ---
 
-## More commands: `find`
+## Just one more powerful command: `find`
 
 ### `find` Cinderella's shoes
-
 
 ```bash
 find . -name "*prince*"
@@ -80,7 +95,7 @@ find . -name "*prince"
 find . -name "prince*"
 ```
 
-> Q: What is *?
+> Q: What does * do?
 
 ---
 
@@ -96,6 +111,7 @@ ls *.md
 
 __Note: You will use this a lot__
 
+
 ---
 
 ## `find` Cinderella's shoes - Activity time!
@@ -106,6 +122,23 @@ find . -name "*prince*"
 
 > Q: where are Cinderella's shoes?
 > Q: Can you find all the hidden items at once in the shire (W2) ?
+
+---
+
+## `grep` The slow supercommand
+```
+grep -rIl "<pattern>" .
+```
+
+| Flag | Character   | Meaning                     |
+|------|-------------|-----------------------------|
+| `-l` | lowercase L | list filenames only         |
+| `-L` | capital L   | list files that don't match |
+| `-I` | capital i   | ignore binary files         |
+| `-i` | lowercase i | case-insensitive            |
+
+> How is this different from find?
+> What is this used for?
 
 ---
 
@@ -121,11 +154,53 @@ cp castle/prince_charming .
 mv prince_charming prince_annoying
 ```
 
-### `mv` - rename and move files
+### `rm` - remove files
 ```
-mv prince_charming prince_annoying
+rm prince_annoying
 ```
 
+---
+
+```
+~~~toilet --font mono9 -t
+SCRIPTING
+~~~
+```
+---
+
+```
+~~~graph-easy --as=boxart
+graph { label: The evolution of UNIX Commands; }
+( [command one], [command two], [command three] ) { flow: down; }
+( bash script: [C1]  { flow: down; } -- OK --> [C2] { flow: down; } -- OK --> [C3] ) 
+( cron: [bash script] { flow:down; } -- wait --> [at 12am] -- execute --> [bash script] { flow:down; } ) 
+
+[command one] ==> { flow: left; } [C1]  == automate ==> [bash script]
+[command two] ==> { flow: left; } [C2]
+[command three] { flow: up; } ==> { flow: left; } [C3]
+~~~
+```
+---
+
+```
+~~~graph-easy --as=boxart
+graph { flow: east; }
+
+  [ n1 ] { label: "git add .\ngit stash"; align: left; }
+  [ n2 ] { label: "git pull origin main"; align: left; }
+  [ n3 ] { label: "git stash pop"; align: left; }
+
+( update.sh:
+  [ script ] { label: "\#!/usr/bin/bash\ngit stash\ngit pull origin main\ngit add .\ngit commit -m \"$1\"\ngit stash pop"; align: left; }
+)
+
+[n3][n2][n1] -> [ script ]
+~~~
+```
+
+## Two golden rules of a script:
+1. shebang (`#!/bin/bash` as the first line)
+1. give it executable permissions (`chmod +x`)
 ---
 
 ## Shell-scripting
@@ -135,7 +210,7 @@ mv prince_charming prince_annoying
 1 .Create your empty file  
 
 ```
-touch hello_world.sh
+touch reminder.sh
 ```
 
 1. start with a shebang at the start of the file (#!):   
@@ -145,44 +220,49 @@ touch hello_world.sh
 1. Type a command after the shebang, e.g.:  
 
 ```
-echo "hello world"
+echo "please go home now"
+espeak "please go home now"
 ```
 
 1. Make the file executable:  
 
 ```
-chmod +x hello_world.sh
+chmod +x reminder.sh
 ```
 
 1. Execute the file:  
 
 ```bash
-./hello_world.sh
+./reminder.sh
 ```
 
 Note: all file paths are relative to where you run the file!
 
+### Cheatsheet
+
+- `crontab -e`  
+in `vim`:  
+- `i`     - to edit/insert
+- `ESC`   - to escape out of edit mode
+- `:wq`   - to save changes
+- `:q!`   - quit without saving
 ---
 
-## Cron: scheduled bash scripts
-a time-based job scheduler that automatically runs scripts or commands at specific intervals, such as daily backups, system maintenance, or scheduled alerts.
-
+## `cron`: scheduled bash scripts
+a time-based job scheduler that automatically runs scripts or commands at specific intervals, such as daily backups, system maintenance, or scheduled alerts.  
 
 How do you run a bash script when you want it, e.g. 
 1. Feed your fish every day at 7am and 7pm
 1. Every school/work day to wake you up at 7am
 
-### An example - reminder for Cinderella to go home before midnight
+
+>> Note: what does echo do?
+
+---
+
+### Exercise! - do a reminder for Cinderella to go home before midnight
 
 Create a bash script to tell you the reminder:
-
-```bash
-touch reminder.sh
-echo "#!/bin/bash" > reminder.sh
-echo 'espeak -s 40 "please go home before midnight!"' >> reminder.sh
-chmod +x reminder.sh
-./reminder.sh
-```
 
 Select default edit for `cron` (first-time only):
 ```
@@ -198,6 +278,30 @@ crontab -e
 
 If this is your first-time opening cron, select `vim` (option 2)
 
+### Cheatsheet
+
+- `crontab -e`  
+in `vim`:  
+- `i`     - to edit/insert
+- `ESC`   - to escape out of edit mode
+- `:wq`   - to save changes
+- `:q!`   - quit without saving
+
+### Steps:
+1. `crontab -e`
+
+---
+## Answer
+
+This is a helper if `reminder.sh` was not created properly
+```bash
+touch reminder.sh
+echo "#!/bin/bash" > reminder.sh
+echo 'espeak -s 40 "please go home before midnight!"' >> reminder.sh
+chmod +x reminder.sh
+./reminder.sh
+```
+
 ---
 
 ## How to use cron?
@@ -211,26 +315,26 @@ or use '*' in these fields (for 'any').
 
 | m | h | dom | mon | dow | command |
 |---|---|-----|-----|-----|----------------------------------|
-| * | * | *   | *   | *   | `/path/to/your/file.sh` |
+| * | * | *   | *   | *   | `/path/to/your/script.sh` |
 
 ### Every 10 mins
 
 | m | h | dom | mon | dow | command |
 |---|---|-----|-----|-----|----------------------------------|
-| */10 | * | *   | *   | *   | `/path/to/your/file.sh` |
+| */10 | * | *   | *   | *   | `/path/to/your/script.sh` |
 
 ### Every day at 3PM
 
 | m | h | dom | mon | dow | command |
 |---|---|-----|-----|-----|----------------------------------|
-| 0 |15 | *   | *   | *   | `/path/to/your/file.sh` |
+| 0 |15 | *   | *   | *   | `/path/to/your/script.sh` |
 
 
 ### Every Mon at 3PM
 
 | m | h | dom | mon | dow | command |
 |---|---|-----|-----|-----|----------------------------------|
-| 0 |15 | *   | *   | 1   | `/path/to/your/file.sh` |
+| 0 |15 | *   | *   | 1   | `/path/to/your/script.sh` |
 
 ---
 
@@ -238,29 +342,19 @@ or use '*' in these fields (for 'any').
 
 | m | h | dom | mon | dow | command |
 |---|---|-----|-----|-----|-------------------------------------------------------|
-| 0 | 0 | 25   | 4  | *   | `base64 -d ~/linux-starters/W2/.secret.b64 \| lolcat` |
+| 0 | 0 | 25   | 4  | *   | `/path/to/secret-birthday-wish.sh` |
 
 --- 
-Note: I know its senggit
-
-
-### Ask Cinderella to go home
-30 23 * * * ~/linux-starters/W3/reminder.sh
-
 
 ---
 
-## Activity: 
+### Exercise: Ask Cinderella to go home + cron
 
-1. Turn the pumpkin into a carriage for Cinderella at 6pm (every evening)
-use `~/linux-starters/W3/bibbidi-bobbidi-boo.sh`
-<br/>
-1. Turn the carriage back into a pumpkin at 12-midnight (every night)
-use `~/linux-starters/W3/midnight.sh`
+Let's do it together now!
 
-```
-
-```
+| m | h | dom | mon | dow | command |
+|---|---|-----|-----|-----|-------------------------------------------------------|
+|30| 23 |  *  |  *  |  *  | `~/linux-starters/W3/reminder.sh`  |
 
 ### Cheatsheet
 
@@ -270,135 +364,196 @@ in `vim`:
 - `ESC`   - to escape out of edit mode
 - `:wq`   - to save changes
 - `:q!`   - quit without saving
----
 
-Your cron should look like this
-```
-0 18 * * * ~/linux-starters/W3/bibbidi-bobbidi-boo.sh
-0  0 * * * ~/linux-starters/W3/midnight.sh
-```
----
-
-### Test your crontab scheduler
-Are you ready?
-
-#### Turn off NTP Time Sync
-```bash
-sudo timedatectl set-ntp false
-sleep 1
-timedatectl
-```
-#### Open a new terminal and run:  
-```
-watch -n .4 'cat carriage' | lolcat
-```
-
-#### To force time to 1759hrs:  
-```
-sudo date -s "2026-05-02 17:59:59"
-```
-
-#### To force time to 2359hrs:  
-```
-sudo date -s "2026-05-02 23:59:59"
-```
+### Steps:
+1. create the file `reminder.sh`
+1. start with the shebang
+1. write the reminder: `espeak "please go home now"`
+1. give the file permissions to run as a script:
+    ```
+    chmod +x reminder.sh
+    ```
+1. instruct `cron` when to run the file and where:
+    ```
+    crontab -e
+    ```
 
 ---
 
-## Restore NTP
 
-```bash
-sudo timedatectl set-ntp true
-sleep 1
-timedatectl
+### Planet of the Lamp-lighter in the Little Prince
+
+In The Little Prince, he visits a tiny planet where there was only enough room for a street lamp and the Lamp-lighter. 
+Because of how small the planet is, a day only last lasts 2 mins* and the Lamp-lighter lights and puts out the lamp every other minute.
+
+The little prince asks, "why have you put out your lamp?"
+
+"Those are the orders. Good evening.", replies the Lamp-lighter.
+
+"I do not understand.", said the little prince.
+
+The lamplighter replies, "There is nothing to understand, orders are orders. Good morning."
+
+But then he explains, "I follow a terrible profession. In the old days, it was reasonable. I put the lamp out in the morning, and in the evening I lighted it again. I had the rest of the day for relaxation and the rest of the night for sleep.
+
+The little prince then asks, "And the orders have been changed since that time?"
+
+"The orders have not changed", said the Lamp-lighter. "That is the tragedy. From year-to-tear the planet has turned more rapidly and the orders have not changed!". "Then - the planet now turns every 2 minutes*, and I no longer have any time for rest!"
+
+[storybook narration - ](https://youtu.be/jMTMPMjX3-4?si=AWiZoLO6NvUrwoAj&t=4242)
+
+---
+##  Can you help the Lamp-lighter greet the little Prince --- every min?
+1. "Good morning" at every odd minute
+1. "Good evening" at every even minute
+
+| m | h | dom | mon | dow | command |
+|---|---|-----|-----|-----|-------------------------------------------------------|
+| ? | ? |  ?  |  ?  |  ?  | `~/linux-starters/W3/good_morning.sh`  |
+| ? | ? |  ?  |  ?  |  ?  | `~/linux-starters/W3/good_evening.sh`  |
+
+For those of you that are quick:  
+
+>> How do you disable the cronjob?
+>> What is an allegory? 
+>> What/who do you think the Lamp-lighter represents?
+>> What has this got to do with automation?
+
+### Cheatsheet
+
+- `crontab -e`  
+in `vim`:  
+- `i`     - to edit/insert
+- `ESC`   - to escape out of edit mode
+- `:wq`   - to save changes
+- `:q!`   - quit without saving
+
+---
+
+## Answer
+
+| m | h | dom | mon | dow | command |
+|---|---|-----|-----|-----|-------------------------------------------------------|
+| 1-59/2 | * |  *  |  *  |  *  | `~/linux-starters/W3/good_morning.sh`  |
+| 0-58/2| * |  *  |  *  |  *  | `~/linux-starters/W3/good_evening.sh`  |
+| # * | * |  *  |  *  |  *  | `~/linux-starters/W3/disabled.sh`  |
+
+>> Note: Adding a # comments out the line. Disabling the line from being "activated". This is also how we write notes to ourselves/others.
+
+This is a hard one! Phew. Now the Lamp-lighter hopefully gets some rest.
+
+>> Remember to disable or delete cronjobs that is not being used!
+
+---
+
+## Bonus - SSH
+
 ```
-Note: Check to make sure that NTP service is **active**
+~~~graph-easy --as=boxart
+graph { label: "-- SSH --"; }
+(You:[ (client) ], [ your bash ], [ your cron ]) ---> (Server:[ (remote) ], [ server's bash ], [ server's cron ]) 
+[ (client) ] { border: none; } -- SSH --> [ (remote) ] { border: none; }
+[ your bash ] <.> [ server's bash ]
+[ your cron ] <.> [ server's cron ]
+~~~
+```
+---
+
+## Bonus - SSH
+
+Now we're going to try to politely access each other's computers. Find a pairing partner!
+
+let's set things up first. We need two packages - `openssh-client` and `openssh-server`
+
+>> How do you install these?
+
+Now create an ssh-key:  
+```
+ssh-keygen
+```
+> Note: Do not put a password. Can you take a guess why?
+
+After creating an SSH key-pair.. note that `~/.ssh/` now has two files, called:  
+- `id_ed25519`
+- `id_ed25519.pub`  
+
+It is not important to understand what these do now. But you can watch this [Diffie-Hellman Key Exchange](https://www.youtube.com/watch?v=YEBfamv-_do&t=151s) video if you really want to get into cryptography!
+
+Just know that you should never share the `id_ed25519` (without the `.pub`) ever! `id_ed25519.pub` can be shared freely with anyone without consequence.
 
 ---
 
-## FS (A tour on where everything lives in Linux)
+## Remote Access
 
-### Linux File Structure
+To make things a little simpler:
+```
+ssh-copy-id maker@[hostname].local
+```
+where hostname is `blur001`, `blur002` ... etc
 
-Linux is CaSe-SenSiTive.
+This copies your key into the computer and allows you passwordless access in the future. Think of it as your fingerprint.
 
-###   The Filesystem Hierarchy 
+Now let's try access:
+```
+ssh maker@[hostname].local
+```
 
-- Linux have no drive letters.
-<br/>
-- It starts from root directory **/**.
-<br/>
-- Removable Drives are mounted under /media, e.g. cdrom
-<br/>
-- **/home** – contains all user home directories
-<br/>e.g. /home/<USERNAME> contains files of a specific user
+>> What do you see?
+---
+
+## Remote Access
+
+Now you're in someone's computer, what do you do?
+
+Say "Hi!" of course!
+
+>> How can you do that?
+
+Now exit from the `ssh` session.
+type:  
+```
+exit
+```
+And you should be back to your computer.
 
 ---
-### Important directories
-*(Do not mess with these directories!)
 
-- **/bin** : Command binaries files (OS)
-<br/>
-- **/usr/bin**: Command binaries that are not essential enough to place into /bin 
-<br/>
-- **/boot**: Static files of the boot loader. Stores data that is used before the kernel begins executing user-mode programs. 
-<br/>
-- **/sbin**: System binaries. Programs necessary for the boot loader 
-<br/>
-- **/lib**: kernel modules and those shared library images
-<br/>
-- **/opt, /var/opt**: reserved for all the software and add-on packages that are not part of the default installation. Stuff you install yourself.
-<br/>
-- **/proc**: Not really a directory. Very special virtual filesystem. 
-<br/>Sometimes referred to as a process information pseudo-file system.
-<br/>(READ ONLY. Do not mess with this directory!)
-<br/>Every number is actually a process id. (see ps)
+## Remote-pair Activity Time
+
+### The task here is to:  
+On your computer (client):
+1. Create a file named after an animal (`dog`, `cat`, `hamster`, `fish` etc), anywhere inside the `linux-starters project folder` - e.g. `W0`, `W1`, `mirkwood`, anywhere!
+1. Inside that file, write the name of your pet or make a proclamation, e.g. "I am Duke Pepperton of Huskia" or "I am whiskers and I like smelly cheese". 
+1. Tell your partner what animal to look for.
+
+On the remote/partner's computer (server):
+1.  `ssh` into your partner's computer, find that pet and proclaim his/her/their name, e.g. `espeak "I found Lord Pepperton of Huskia"`
+
+>> Note: do you still remember how to find something?
 
 ---
-### Devices aka peripherals
-- **/dev** : directory is the location of special or device files.
-<br/>Tip: Everything in Linux is a file or a directory!
-<br/>
-- /dev/hd_ - hard disk
-<br/>
-- /dev/hd*a* – Primary hard disk
-<br/>
-- /dev/hd*a1* – Primary hard disk, Partition 1
-<br/>
-- /dev/cdrom – CD/DVD drive
-<br/>
-- ~~/dev/fd - floppy drive~~
-<br/>
-- /dev/dsp – audio device (speaker)
-<br/>
-- /dev/lp – printer, parallel port
-<br/>
-- /dev/tty – terminals or console
+
+## Internet Folklore:
+
+1. `inform-my-spouse.sh`  
+    Sends a text message "late at work" to her spouse (apparently). Automatically picks reasons from an array of strings, randomly. Runs inside a cron-job. The job fires if there are active SSH-sessions on the server after 9pm with her login.    
+
+1. `john-silly.sh`
+    scans the inbox for emails from "john" (a DBA at our clients). Looks for keywords like "help", "trouble", "sorry" etc. If keywords are found - the script SSHes into the clients server and rolls back the staging database to the latest backup. Then sends a reply "no worries mate, be careful next time".  
+
+1. `hangover.sh` 
+    another cron-job that is set to specific dates. Sends automated emails like "not feeling well/gonna work from home" etc. Adds a random "reason" from another predefined array of strings. Fires if there are no interactive sessions on the server at 8:45am.  
+
+1. `brew-coffee.sh` 
+    this one waits exactly 17 seconds (!), then opens a telnet session to our coffee-machine (we had no frikin idea the coffee machine is on the network, runs linux and has a TCP socket up and running) and sends something like sys brew. Turns out this thing starts brewing a mid-sized half-caf latte and waits another 24 (!) seconds before pouring it into a cup. The timing is exactly how long it takes to walk to the machine from the dudes desk.
+
+Source: https://github.com/NARKOZ/hacker-scripts
 
 ---
-### System Configuration files
-- **/etc** - contains all system related configuration files
-<br/>
-- /etc/fstab – [FileSystem TABle] filesystems mounted automatically at startup
-<br/>
-- /etc/group - lists user groups and who belongs to them.
-<br/>
-- /etc/hostname – machine hostname
-<br/>
-- /etc/passwd - contains the user database, with fields giving the username, real name, home directory, and other information about each user. Does not  actually contain password.
-<br/>
-- /etc/syslog.conf - Lists where log files should go, what messages are written to them and the level of verbosity.
-<br/>
-- /etc/timezone - local timezone.
-<br/>
-- /etc/rc - directories contain all the files necessary to control system services and configure runlevels.
 
----
-### Ref: Bash shell script cheat sheet
-* https://linuxize.com/cheatsheet/bash/
-* https://github.com/RehanSaeed/Bash-Cheat-Sheet
+## Let's Discuss
 
-
+Do you have any questions about scripting/automation/SSH?
 ---
 
 ## Discussion: Next week
@@ -407,27 +562,13 @@ Linux is CaSe-SenSiTive.
 
 The org team can help you set it up 
 
-1. PlatformIO (IOT) - Seth
-1. Fish-o-matic - Cathy
-1. Webcam - Neo
-1. Alexander
-1. Evander
-1. Trevis
-1. Viya
-1. George
-1. Zephan
-1. Kim
-1. Francis
-1. Hasan
-1. Hidayah
-1. Hisham
-
-Did I miss anyone?
-
 ## Suggestions
 1. Some 3D modeling tools
 1. Related to the makerspace?
 1. Command-line wizardry
+1. Games!
+1. Out of ideas? Check 
+[awesome-linux](https://github.com/luong-komorebi/Awesome-Linux-Software)
 
 
 ---
