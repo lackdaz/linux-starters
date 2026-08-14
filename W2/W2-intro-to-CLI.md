@@ -27,7 +27,7 @@ TO CLI
 - [ ] Cloning the linux-starters repository
 
 ## Learning objectives
-
+- [ ] Quick History - Computers (From punch cards to terminal)
 - [ ] What is the CLI?
 - [ ] Terminal - First Look
 - [ ] Basic Commands
@@ -119,17 +119,60 @@ cd linux-starters
 ```
 
 ```
-cd W1
+cd W2
 ```
 
 And now we are ready for the class!
 
 And you just used `git` for the first-time!
 
+Use slides with our Week 2 md file
+
+```
+slides W2-intro-to-CLI.md
+```
+
 ---
 
 ## What is the CLI
 
+### Quick History
+
+What do you need for computers?
+1. Input
+2. Processing
+3. Output
+
+#### Input & Output
+Early computer programs were written and fed into computers using 
+```
+~~~graph-easy --as=boxart
+[Punch Cards] -> [Magnetic Tape] -> [Electronic]
+~~~
+```
+Programmers have to convert their ideas to computer specific instructions and data (programs) into cards, magnetic tape, and then software. 
+
+Output then was also printed in paper but there were some issues 
+1. Usually after inputting the program, it typically run until finished.
+2. No human interaction with the program after it gets fed to the computer
+
+So how do we interact with our computers?
+- Operating Systems (OS)
+- Teletypewriter (TTY) 
+
+---
+#### Evolution of the Terminal
+```
+~~~graph-easy --as=boxart
+[Punch Cards, Paper, Tape] -> [Teletype, telegraph, paper]  -> [Teletype and Screen (Glass Teletype)] -> [Teletype Emulators (What we're using now!)]
+~~~
+``` 
+
+See also:
+- <https://virtualcuriosities.com/articles/4540/teletypewriter>
+- <https://aymanbagabas.com/posts/a-brief-history-of-terminal-emulators/>
+
+---
 ### GUI vs CLI
 
 <https://www.youtube.com/watch?v=w9u0d4C95Zs>
@@ -222,18 +265,20 @@ ls -lrt .
 ### `cd` - change directory
 
 #### `There and back again`
+0. ```open ./map.jpg```
+
 
 1. ```cd shire```
 
 > maker@linux101:~/linux-starters/W2/shire$
 
-1. ```cd mordor```
+2. ```cd mordor```
 
 > maker@linux101:~/linux-starters/W2/shire/mordor$
 
 Oops this looks dangerous, let's go back quickly!
 
-1. ```cd -```
+3. ```cd ..```
 
 > Q: What did that do?
 > Q: Where are we now?
@@ -247,15 +292,15 @@ you should see... `mordor` and `rivendell`
 let's go to `rivendell`! But let's auto-complete ... the rest of the unexpected journey
 > maker@linux101:~/linux-starters/W2/shire$
 
-1. ```cd r```, then press `tab` like ```cd r<tab>```  
+2. ```cd r```, then press `tab` like ```cd r<tab>```  
 
 >Q: Wow! how did that work?
 
-1. Now press `enter` and `ls`
+3. Now press `enter` and `ls`
 
 >Q: Where did you end up?
 
-1. Let's follow our heroes to the end! (self-learning)
+4. Let's follow our heroes to the end! (self-learning)
 
 >Q: Where is the final destination?
 
@@ -441,6 +486,7 @@ What we missed this week:
 1. `mkdir`  # make directory, or folder
 1. `mv`     # moves and renames files
 
+~~~echo
 ---
 
 ## Encoding/decoding of hidden files
@@ -457,6 +503,7 @@ to decode:
 ```
 base64 -d  .secret.b64 | cat
 ```
+~~~
 
 ---
 
@@ -469,3 +516,8 @@ ssh snakes.run
 ```
 
 ---
+## Resources
+### More about history
+- https://aymanbagabas.com/posts/a-brief-history-of-terminal-emulators/
+- OS: https://youtube.com/watch?v=26QPDBe-NB8
+- Teletypes: https://youtube.com/watch?v=4RPtJ9UyHS0
