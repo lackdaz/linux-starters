@@ -164,9 +164,24 @@ So how do we interact with our computers?
 #### Evolution of the Terminal
 ```
 ~~~graph-easy --as=boxart
-[Punch Cards, Paper, Tape] -> [Teletype, telegraph, paper]  -> [Teletype and Screen (Glass Teletype)] -> [Teletype Emulators (What we're using now!)]
+[Punch Cards, Paper, Tape] -> [Teletype, telegraph, paper] 
 ~~~
-``` 
+```
+
+```
+~~~graph-easy --as=boxart
+[Teletype and Screen (Glass Teletype)]
+~~~
+```
+
+```
+~~~graph-easy --as=boxart
+ [Teletype Emulators (What we're using now!)]
+~~~
+```
+
+
+ 
 
 See also:
 - <https://virtualcuriosities.com/articles/4540/teletypewriter>
