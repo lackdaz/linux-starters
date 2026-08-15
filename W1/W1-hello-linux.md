@@ -92,7 +92,10 @@ More of what, why, how later.
    - Draw
    - Base & Math
 - Go Online - WiFi, web browser
-- File Explorer (Files)
+- File Explorer (Files)  
+
+// TODO: add wifi password here
+
 ---
 ## First look (CLI)
 CLI = Command Line Interface
@@ -107,8 +110,8 @@ aka Terminal
 
 ---
 ```
-~~~toilet --font mono12 -t
-CLI JAM!!!
+~~~toilet -f smblock --gay -t
+CLI   JAM!!!
 ~~~
 ```
 ---
@@ -159,10 +162,10 @@ Usage:
 fortune | lolcat
 ```
 
-Run continuously:  
+Run continuously (every 5s):  
 
 ```
-watch -n 5 | fortune | lolcat
+watch -n 5 fortune | lolcat
 ```
 
 ---
@@ -214,6 +217,9 @@ Install:
 Usage:  
 
 ```
+espeak 'hello world'  
+```
+```
 espeak -v cy 'Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch'
 ```
 
@@ -257,6 +263,4 @@ This contains the slides and hands-on for all 4 sessions.
     - How to install software - e.g. browser
     - Install learning slides
     - Watch full video link (53 mins)
-
-
 ---
