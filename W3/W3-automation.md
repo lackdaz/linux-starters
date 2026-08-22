@@ -37,7 +37,7 @@ git pull origin main
 git stash pop
 ```
 
-If you are lazy and want to just run all of this in one command, make sure you `chmod +x W3-automation.md` and press ctr+`:  
+If you are lazy and want to just run all of this in one command, make sure you `chmod +x W3-automation.md` and press `ctr+e`:  
 
 ```bash
 cd ~/linux-starters
@@ -84,15 +84,15 @@ sudo apt install -y vim
 ### `find` Cinderella's shoes
 
 ```bash
-find . -name "*prince*"
+find . -iname "*prince*"
 ```
 
 ```bash
-find . -name "*prince"
+find . -iname "*prince"
 ```
 
 ```bash
-find . -name "prince*"
+find . -iname "prince*"
 ```
 
 > Q: What does * do?
