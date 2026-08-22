@@ -96,6 +96,7 @@ find . -iname "prince*"
 ```
 
 > Q: What does * do?
+> Q: What does -i in -iname do?
 
 ---
 
@@ -117,7 +118,7 @@ __Note: You will use this a lot__
 ## `find` Cinderella's shoes - Activity time!
 
 ```
-find . -name "*prince*"
+find . -iname "*prince*"
 ```
 
 > Q: where are Cinderella's shoes?
@@ -125,9 +126,16 @@ find . -name "*prince*"
 
 ---
 
-## `grep` The slow supercommand
+## `grep` The supercommand that looks *into* files
+
+Find a filename with `find` and `|`:
 ```
-grep -rIl "<pattern>" .
+find . | grep <pattern>
+```
+
+Find a pattern within a file in the current directory:
+```
+grep -rIl <pattern> .
 ```
 
 | Flag | Character   | Meaning                     |
@@ -256,7 +264,7 @@ How do you run a bash script when you want it, e.g.
 1. Every school/work day to wake you up at 7am
 
 
->> Note: what does echo do?
+> Note: what does echo do?
 
 ---
 
@@ -343,6 +351,8 @@ or use '*' in these fields (for 'any').
 | m | h | dom | mon | dow | command |
 |---|---|-----|-----|-----|-------------------------------------------------------|
 | 0 | 0 | 25   | 4  | *   | `/path/to/secret-birthday-wish.sh` |
+
+[More practice](https://crontab.guru/)
 
 --- 
 
@@ -498,7 +508,7 @@ Now let's try access:
 ssh maker@[hostname].local
 ```
 
->> What do you see?
+> What do you see?
 ---
 
 ## Remote Access
@@ -529,7 +539,7 @@ On your computer (client):
 On the remote/partner's computer (server):
 1.  `ssh` into your partner's computer, find that pet and proclaim his/her/their name, e.g. `espeak "I found Lord Pepperton of Huskia"`
 
->> Note: do you still remember how to find something?
+> Note: do you still remember how to find something?
 
 ---
 
