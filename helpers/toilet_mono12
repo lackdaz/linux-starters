@@ -1,0 +1,2 @@
+#!/bin/bash
+toilet --font mono12 -t | sed 's/^/    /'
